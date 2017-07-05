@@ -1,3 +1,35 @@
+var app = {
+    // Application Constructor
+    initialize: function() {
+        this.bindEvents();
+    },
+    // Bind Event Listeners
+    //
+    // Bind any events that are required on startup. Common events are:
+    // 'load', 'deviceready', 'offline', and 'online'.
+    bindEvents: function() {
+        document.addEventListener('firstpage', this.onDeviceReady, false);
+    },
+    // deviceready Event Handler
+    //
+    // The scope of 'this' is the event. In order to call the 'receivedEvent'
+    // function, we must explicitly call 'app.receivedEvent(...);'
+    onDeviceReady: function() {
+        app.receivedEvent('firstpage');
+    },
+    // Update DOM on a Received Event
+    receivedEvent: function(id) {
+        var parentElement = document.getElementById(id);
+        var listeningElement = parentElement.querySelector('.listening');
+        var receivedElement = parentElement.querySelector('.received');
+
+        listeningElement.setAttribute('style', 'display:none;');
+        receivedElement.setAttribute('style', 'display:block;');
+
+        console.log('Received Event: ' + id);
+    }
+};
+
 // External Panel created to appear on each page without excess code. All data types are defined in this variable 
 var panel = '<div data-role="panel" id="leftpanel" data-position="left" data-display="push" data-theme="a"><div data-role="header"><h1>Browse</h1></div>                                                                        <ul data-role="listview" data-inset="true"><li><a href="index.html" data-url="index.html" class="ui-btn ui-corner-all ui-icon-home ui-btn-icon-left" data-transition="slide">Home</a><a href="#catMain" data-url="index.html" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-left" data-transition="slide">Categories</a><a href="#featMain" data-url="index.html" class="ui-btn ui-corner-all ui-icon-eye ui-btn-icon-left" data-transition="slide">Featured Article</a><a href="map.html" data-url="map.html" class="ui-btn ui-corner-all ui-icon-navigation ui-btn-icon-left" data-transition="slide">Map</a></a><a href="settings.html" data_url="settings.html" class="ui-btn ui-corner-all ui-icon-gear ui-btn-icon-left" data-transition="slide">Settings</a></li></ul></div>';
 
