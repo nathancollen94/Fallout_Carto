@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8">
+        <meta name="format-detection" content="telephone=no" /> <!-- Removes Click-to-Call iOS Function -->
+        <meta name="msapplication-tap-highlight" content="no" /> <!-- Removes Grey Tap Highlight on Windows Phone 8 and Up. -->
+        
+        <meta name="viewport" content="width=device, initial-scale=1, maximum-scale=1, minimum-scale=1">  <!-- Ensures proper scaling with all devices -->
+        
+        <link rel="stylesheet" href="css/jquery.mobile-1.4.5.css"/> <!-- JQuery Mobile CSS --> 
+        <link rel="stylesheet" href="css/themes/fallout_carto.css"/><!-- Link to JQuery Theme CSS -->
+        <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css"/>
+        <link rel="stylesheet" href="css/style.css"/>
+    
+        <script type="text/javascript" src="js/jquery.mobile-1.4.5.js"></script> <!-- JQueryMobile Library -->        
+        <script type="text/javascript" src="cordova.js"></script> <!-- Allows access to native device hardware -->
+        <script type="text/javascript" src="js/index.js"></script><!--Own JS File-->
+        
+        <title>Fallout Cartographer</title>       
+</head>
+
+    
+<body>
+<!--HOME PAGE-->
+<div data-role="page" id="indexMain">
+        
+    <div data-role="header" data-position="fixed"><a href="#leftpanel" class="ui-btn ui-btn-left ui-btn-icon-notext ui-icon-grid ui-corner-all"></a>
+            
+            <h1>Fallout Cartographer</h1>
+            <h3>A Fallout 4 Reference Guide</h3>
+            
+        <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li><a href="#indexMain" class="ui-btn-active ui-state-persist" data-icon="home">Home</a></li>
+                <li><a href="map.html" data-url="map.html"data-icon="navigation" data-transition="slide">Map</a></li>
+                <li><a href="#catMain" data-url="index.html" data-icon="info" data-transition="slide">Categories</a></li>
+            </ul>    
+        </div>    
+        </div> 
+        <div data-role="main" id="mainhome" class="ui-content">
+            <h1>Welcome to Fallout Cartographer!</h1>
+        <div data-role="collapsible" data-collapsed="false" class="ui-content">
+            <H3>Getting Started</H3>
+                <p>This app is designed to help you learn about the content of the Fallout 4 video game whilst allowing you the freedom to play at the same time. Think of it as a wiki with added features to give you the most out of your phone and your overall experience.<br>
+                Navigation: Wherever you are on a page, you will be able to navigate yourself to where you like on the app. This can be done through several ways:<br>
+                Nav-bars: You will find two Nav-bars on each page of the app, top and bottom.<br>
+                The top Nav-bar will allow you to navigate to the most common areas of the app, the home page, the map, and the categories page. This gives you easy access to the areas you most want.<br> 
+                The top Nav-bar will also follow you as you scroll down a page, tap on anything unspecific to make it disappear, and again to reappear.<br>
+                The bottom Nav-bar houses buttons you will most likely need when reaching the end of a page. The back button, the ‘Back to the Top’ button and the Settings page. These can be useful for navigating around a single page or returning to the last pages you viewed.<br> 
+                Navigation Panel:  This panel can be called one of two ways. For those with touch capabilities, swiping right will caused the panel to pop open where you can find links to each page you might require. Swiping left will then close the panel.<br>
+                There is also a button in the top left corner of the header for those without touch capability. Touching the button again will close the panel.<br>
+                Navigation to each page can also be found below this text on the home screen.<br>
+                Searching: To search for a specific article head over to the Categories page and you will find context sensitive lists of all articles within the page, simply use one of the search bars for the article you require, then tap the article you want to go to its page.<br>
+            </p> 
+     </div>
+        <div data-role="controlgroup" data-type="vertical" data-position="fixed" class="ui-content">
+        <h2>Browse</h2>    
+            <a href="#featMain" data-url="index.html" class="ui-btn ui-corner-all ui-icon-eye ui-btn-icon-left" data-transition="slide">Featured Article</a><br>
+            <a href="#catMain" data-url="index.html" class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-left" data-transition="slide">Categories</a><br>
+            <a href="map.html" data-url="map.html" class="ui-btn ui-corner-all ui-icon-navigation ui-btn-icon-left" data-transition="slide">Map</a><br>
+            <a href="settings.html" data-url="settings.html" class="ui-btn ui-corner-all ui-icon-gear ui-btn-icon-left" data-transition="slide">Settings</a><br>
+        </div>
+    </div>
+
+       <div data-role="footer">
+             <div data-role="navbar" data-iconpos="top">
+                <ul>
+                    <li><a href="#" class="scrollToTop" data-icon="arrow-u">Back To Top</a></li>
+                    <li><a href="settings.html" data-url="settings.html" data-icon="gear" data-transition="slide">Settings</a></li>
+                </ul>
+                 <h5 class="ui-content">This is a Prototype Application, it was created for Learning Purposes and will not be used outside of this purpose. All information regarding Fallout 4 cotent was gathered from Fallout_Wiki.com (2017) </h5>
+            </div> 
+        </div>
+</div>
+    
+<!--CATEGORIES PAGE-->     
+<div data-role="page" id="catMain">
+    <div data-role="header" data-position="fixed"><a href="#leftpanel" class="ui-btn ui-btn-left ui-btn-icon-notext ui-icon-grid ui-corner-all"></a>
+            <h1>Fallout Cartographer</h1>
+            <h2>A Fallout 4 Reference Guide</h2>
+        <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li><a href="index.html" data-url="index.html" data-icon="home" data-transition="slide">Home</a></li>
+                <li><a href="map.html" data-url="map.html" data-icon="navigation" data-transition="slide">Map</a></li>
+                <li><a href="#catMain" data-url="index.html" class="ui-btn-active ui-state-persist" data-icon="info" data-transition="slide">Categories</a></li>
+            </ul>    
+        </div>    
+    </div>   
+    <div data-role="main" id="catmainhome" class="ui-content">
+            <h2>Categories:</h2>
+            <hr>
+                <ul data-role="listview">
+                <li>
+                    <div data-role="collapsible" data-collapsed="false" class="ui-content">
+                        <h3>Characters<span class="ui-li-count">1</span></h3>
+                        <form class="ui-filterable">
+                          <input id="filter1" data-type="search" placeholder="Search for an Article...">
+                        </form>
+                        <ul data-role="listview" data-inset="true" data-filter="true" data-input="#filter1">
+                            <li><a href="#char_cod">Codsworth</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div data-role="collapsible" data-collapsed="false" class="ui-content">
+                        <h3>Creatures<span class="ui-li-count">2</span></h3>
+                         <form class="ui-filterable">
+                          <input id="filter2" data-type="search" placeholder="Search for an Article...">
+                        </form>
+                        <ul data-role="listview" data-inset="true" data-filter="true" data-input="#filter2">
+                            <li><a href="#cre_blo">Bloatfly</a></li>
+                            <li><a href="#cre_radro">Radroach</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div data-role="collapsible" data-collapsed="false" class="ui-content">
+                        <h3>Items<span class="ui-li-count">4</span></h3>
+                         <form class="ui-filterable">
+                          <input id="filter3" data-type="search" placeholder="Search for an Article...">
+                        </form>
+                        <ul data-role="listview" data-inset="true" data-filter="true" data-input="#filter3">
+                            <li><a href="#itm_wep_cryolator">Cryolator</a></li>
+                            <li><a href="#itm_mag_grog3">Grognak the Barbarian Issue #3</a></li>
+                            <li><a href="#itm_key_pipboy">Pip-Boy 3000 Mark IV</a></li>
+                            <li><a href="#itm_holo_redmen">Red Menace - Minigame Holotape</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div data-role="collapsible" data-collapsed="false" class="ui-content">
+                        <h3>Locations<span class="ui-li-count">2</span></h3>
+                         <form class="ui-filterable">
+                          <input id="filter4" data-type="search" placeholder="Search for an Article...">
+                        </form>
+                        <ul data-role="listview" data-inset="true" data-filter="true" data-input="#filter4">
+                            <li><a href="#lo_sanHill">Sanctuary Hills</a></li>
+                            <li><a href="#lo_v111">Vault 111</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div data-role="collapsible" data-collapsed="false" class="ui-content">
+                        <h3>Quests<span class="ui-li-count">2</span></h3>
+                         <form class="ui-filterable">
+                          <input id="filter5" data-type="search" placeholder="Search for an Article...">
+                        </form>
+                        <ul data-role="listview" data-inset="true" data-filter="true" data-input="#filter5">
+                            <li><a href="#quest_OOT">Out of Time</a></li>
+                            <li><a href="#quest_WNC">War Never Changes</a></li>
+                        </ul>
+                    </div>                    
+                </li>           
+                </ul>
+    </div>
+    <div data-role="footer">
+             <div data-role="navbar" data-iconpos="top">
+                <ul>
+                    <li><a href="#" data-icon="arrow-l" data-rel="back" data-transition="slide" data-direction="reverse">Go Back</a></li>
+                    <li><a href="#" class="scrollToTop" data-icon="arrow-u">Back To Top</a></li>
+                    <li><a href="settings.html" data-url="settings.html" data-icon="gear" data-transition="slide">Settings</a></li>
+                </ul>
+                 <h5 class="ui-content">This is a Prototype Application, it was created for Learning Purposes and will not be used outside of this purpose. All information regarding Fallout 4 cotent was gathered from Fallout_Wiki.com (2017) </h5>
+            </div> 
+    </div>
+    </div>    
+        
+<!--FEATURED CONTENT-->
+<div data-role="page" id="featMain">
+    <div data-role="header" data-position="fixed"><a href="#leftpanel" class="ui-btn ui-btn-left ui-btn-icon-notext ui-icon-grid ui-corner-all"></a>
+            <h1>Fallout Cartographer</h1>
+            <h2>A Fallout 4 Reference Guide</h2>
+    <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li><a href="index.html" data-url="index.html" data-icon="home" data-transition="slide">Home</a></li>
+                <li><a href="map.html" data-url="map.html" data-icon="navigation" data-transition="slide">Map</a></li>
+                <li><a href="#catMain" data-url="index.html" class="ui-btn-active ui-state-persist" data-icon="info" data-transition="slide">Categories</a></li>
+            </ul>    
+     </div>    
+    </div>
+
+ <div data-role="main" class="ui-content">
+        <h1>Sanctuary Hills</h1>
+        
+    <div class="responsive">
+        <div class="gallery">
+        <a target="_blank" href="img/img_sanc.png">
+            <img src="img/img_sanc.png" alt="Sanctuary" width="device" height="device">
+        </a>
+            <div class="desc">Sanctuary Hills: A Home Away from Home.</div>
+        </div>
+    </div>
+        
+    <hr>
+        <p>Sanctuary Hills, often referred to as Sanctuary, is a location and settlement in the Commonwealth in 2287.</p>
+    <hr>
+        <h2>Quests</h2>
+            <h3><a href="#quest_WNC">War Never Changes</a></h3>
+            <h3><a href="#quest_OOT">Out of Time</a></h3>
+    <hr>
+        <h2>Notable Loot</h2>
+        <h3><a href="#itm_mag_grog3">Grognak the Barbarian Issue #3</a></h3>
+            <h3>You're SPECIAL!</h3>
+            <h3>Three Gold Bars</h3>
+    <hr>
+        <h2>Creatures</h2>
+            <h3><a href="#cre_radro">Radroach</a></h3>
+            <h3><a href="#cre_blo">Bloatfly</a></h3>
+    <hr>
+        <h2>Layout</h2>
+            <p>Sanctuary Hills is accessible by a small footbridge from <a href="#lo_v111">Vault 111</a> and original main road over the larger bridge crossing the Misty Lake river, leading to Concord, via the Red Rocket fueling station. The village itself is built along a single road, which ends in a cul-de-sac. The site is populated by several houses which, by 2287, are in various states of decay. To the west of Sanctuary Hills the Misty Lake is located and is the source to the two rivers surrounding the small island of Sanctuary Hills.<br> There are multiple safes and lootable items to be found in Sanctuary. Starting from the bridge leading out of the community, there is a floor safe (Advanced) hidden under a dresser in the blue house to the north of the road. In the yellow house at the curve of the street, there is a terminal (Novice) and a safe (Novice) with a makeshift bomb on the top and tension trigger affixed to the left hand side. In the blue house next to the yellow one is a Nuka-Cherry in the fridge, a first aid box in the bathroom and a locked suitcase (Novice) in the bedroom. In the Sole Survivor's house, the player character can find an issue of <a href="#itm_mag_grog3"> Grognak the Barbarian </a> on the kitchen table and the "You're SPECIAL!" book under the dresser in Shaun's room</p>   
+</div>   
+    <div data-role="footer">
+        <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li><a href="#" data-icon="arrow-l" data-rel="back" data-transition="slide" data-direction="reverse">Go Back</a></li>
+                <li><a href="#" class="scrollToTop" data-icon="arrow-u">Back To Top</a></li>
+                <li><a href="settings.html" data_url="settings.html" data-icon="gear" data-transition="slide">Settings</a></li>
+            </ul>
+                 <h5 class="ui-content">This is a Prototype Application, it was created for Learning Purposes and will not be used outside of this purpose. All information regarding Fallout 4 cotent was gathered from Fallout_Wiki.com (2017) </h5>
+            </div> 
+        </div>        
+</div>
+    
+<!--ARTICLE PAGES-->
+<div data-role="page" id="char_cod">
+    <div data-role="header" data-position="fixed"><a href="#leftpanel" class="ui-btn ui-btn-left ui-btn-icon-notext ui-icon-grid ui-corner-all"></a>
+            <h1>Fallout Cartographer</h1>
+            <h2>A Fallout 4 Reference Guide</h2>
+    <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li><a href="index.html" data-url="index.html" data-icon="home" data-transition="slide">Home</a></li>
+                <li><a href="map.html" data-url="map.html" data-icon="navigation" data-transition="slide">Map</a></li>
+                <li><a href="#catMain" data-url="index.html" class="ui-btn-active ui-state-persist" data-icon="info" data-transition="slide">Categories</a></li>
+            </ul>    
+     </div>    
+    </div>
+    
+ <div data-role="main" class="ui-content">
+    <h1>Codsworth</h1>
+     
+    <div class="responsive">
+        <div class="gallery">
+        <a target="_blank" href="img/img_cod.png">
+            <img src="img/img_cod.png" alt="Codsworth" width="device" height="device">
+        </a>
+            <div class="desc">Codsworth: Robot/Butler/Babysitter</div>
+        </div>
+    </div>
+     
+    <hr>
+        <p>Codsworth is a domestic-model Mister Handy purchased by the Sole Survivor, in service to them and their family before the Great War in <a href="#lo_sanHill">Sanctuary Hills</a>, as a butler from 2077 to 2287. He can be recruited as a potential companion</p>
+    <hr>
+        <h2>Quests</h2>
+            <h3><a href="#quest_WNC">War Never Changes</a></h3> <p>Codsworth will act as the family's butler in this quest, providing small bits of dialogue and interaction.</p>
+            <h3><a href="#quest_OOT">Out of Time</a></h3> <p>The Sole Survivor has the option to team up with Codsworth and scout the area of what once was Sanctuary Hills.</p>
+    <hr>
+        <h2>Effects of Player's Actions</h2>
+            <p>Maxed approval with Codsworth grants the Robot Sympathy perk, which grants +10 Energy Resistance against robots' energy weapons. Maximum affinity can be achieved after attaching 29 weapon modifications, read the Robot Sympathy perk page for more information.</p>
+    </div> 
+    
+    <div data-role="footer">
+        <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li><a href="#" data-icon="arrow-l" data-rel="back" data-transition="slide" data-direction="reverse">Go Back</a></li>
+                <li><a href="#" class="scrollToTop" data-icon="arrow-u">Back To Top</a></li>
+                <li><a href="settings.html" data_url="settings.html" data-icon="gear" data-transition="slide">Settings</a></li>
+            </ul>
+                 <h5 class="ui-content">This is a Prototype Application, it was created for Learning Purposes and will not be used outside of this purpose. All information regarding Fallout 4 cotent was gathered from Fallout_Wiki.com (2017) </h5>
+            </div> 
+        </div>        
+</div>
+        
+<div data-role="page" id="cre_blo">
+    <div data-role="header" data-position="fixed"><a href="#leftpanel" class="ui-btn ui-btn-left ui-btn-icon-notext ui-icon-grid ui-corner-all"></a>
+            <h1>Fallout Cartographer</h1>
+            <h2>A Fallout 4 Reference Guide</h2>
+    <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li><a href="index.html" data-url="index.html" data-icon="home" data-transition="slide">Home</a></li>
+                <li><a href="map.html" data-url="map.html" data-icon="navigation" data-transition="slide">Map</a></li>
+                <li><a href="#catMain" data-url="index.html" class="ui-btn-active ui-state-persist" data-icon="info" data-transition="slide">Categories</a></li>
+            </ul>    
+     </div>    
+    </div>
+    
+ <div data-role="main" class="ui-content">
+    <h1>Bloatfly</h1>
+     
+    <div class="responsive">
+        <div class="gallery">
+        <a target="_blank" href="img/img_bloat.png">
+            <img src="img/img_bloat.png" alt="Bloatfly" width="device" height="device">
+        </a>
+            <div class="desc">Bloatfly: Watch the Stinger</div>
+        </div>
+    </div>
+     
+    <hr>
+        <p>A bloatfly is a common mutated pest resembling an oversized blow-fly, often found in the Commonwealth</p>
+    <hr>
+        <h2>Attack Patterns</h2>
+            <p>The bloatfly is a giant mutated blowfly. Bloatflies attack at long range by peppering their prey with spine-bedecked larva launched from its abdomen. Players can find bloatflies wandering in the wastelands.<br> In Fallout 4, the Bloatflies are more aggressive and can be seen attacking in groups.</p>
+
+    </div> 
+    
+    <div data-role="footer">
+        <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li><a href="#" data-icon="arrow-l" data-rel="back" data-transition="slide" data-direction="reverse">Go Back</a></li>
+                <li><a href="#" class="scrollToTop" data-icon="arrow-u">Back To Top</a></li>
+                <li><a href="settings.html" data_url="settings.html" data-icon="gear" data-transition="slide">Settings</a></li>
+            </ul>
+                 <h5 class="ui-content">This is a Prototype Application, it was created for Learning Purposes and will not be used outside of this purpose. All information regarding Fallout 4 cotent was gathered from Fallout_Wiki.com (2017) </h5>
+            </div> 
+        </div>        
+</div>
+    
+<div data-role="page" id="cre_radro">
+    <div data-role="header" data-position="fixed"><a href="#leftpanel" class="ui-btn ui-btn-left ui-btn-icon-notext ui-icon-grid ui-corner-all"></a>
+            <h1>Fallout Cartographer</h1>
+            <h2>A Fallout 4 Reference Guide</h2>
+    <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li><a href="index.html" data-url="index.html" data-icon="home" data-transition="slide">Home</a></li>
+                <li><a href="map.html" data-url="map.html" data-icon="navigation" data-transition="slide">Map</a></li>
+                <li><a href="#catMain" data-url="index.html" class="ui-btn-active ui-state-persist" data-icon="info" data-transition="slide">Categories</a></li>
+            </ul>    
+     </div>    
+    </div>
+    
+ <div data-role="main" class="ui-content">
+    <h1>Radroach</h1>
+     
+    <div class="responsive">
+        <div class="gallery">
+        <a target="_blank" href="img/img_roach.png">
+            <img src="img/img_roach.png" alt="Radroach" width="device" height="device">
+        </a>
+            <div class="desc">Radroach: Absolutely Everywhere!</div>
+        </div>
+    </div>
+     
+    <hr>
+        <p>Great American cockroaches, colloquially called radroaches, or giant cockroaches, are giant versions of the pre-War species that have been mutated by radiation.</p>
+    <hr>
+        <h2>Attack Patterns</h2>
+            <p>Radroaches are usually found in underground areas and sewers across North America, which can cause them to be a pest in certain Vaults, where they can often be found in fairly large groups. Radroaches feed on dead organisms, but they will attack living creatures if isolated. Their numbers are their greatest advantage.<br>Radroaches are territorial and rather aggressive, but not very harmful. Anyone can kill them with their bare hands, and will only attack if you are very close</p>
+    </div> 
+    
+    <div data-role="footer">
+        <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li><a href="#" data-icon="arrow-l" data-rel="back" data-transition="slide" data-direction="reverse">Go Back</a></li>
+                <li><a href="#" class="scrollToTop" data-icon="arrow-u">Back To Top</a></li>
+                <li><a href="settings.html" data_url="settings.html" data-icon="gear" data-transition="slide">Settings</a></li>
+            </ul>
+                 <h5 class="ui-content">This is a Prototype Application, it was created for Learning Purposes and will not be used outside of this purpose. All information regarding Fallout 4 cotent was gathered from Fallout_Wiki.com (2017) </h5>
+            </div> 
+        </div>        
+</div>
+    
+<div data-role="page" id="itm_wep_cryolator">
+    <div data-role="header" data-position="fixed"><a href="#leftpanel" class="ui-btn ui-btn-left ui-btn-icon-notext ui-icon-grid ui-corner-all"></a>
+            <h1>Fallout Cartographer</h1>
+            <h2>A Fallout 4 Reference Guide</h2>
+    <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li><a href="index.html" data-url="index.html" data-icon="home" data-transition="slide">Home</a></li>
+                <li><a href="map.html" data-url="map.html" data-icon="navigation" data-transition="slide">Map</a></li>
+                <li><a href="#catMain" data-url="index.html" class="ui-btn-active ui-state-persist" data-icon="info" data-transition="slide">Categories</a></li>
+            </ul>    
+     </div>    
+    </div>
+    
+ <div data-role="main" class="ui-content">
+    <h1>Cryolator</h1>
+     
+     <div class="responsive">
+        <div class="gallery">
+        <a target="_blank" href="img/img_cryo.png">
+            <img src="img/img_cryo.png" alt="Cryolator" width="device" height="device">
+        </a>
+            <div class="desc">Cryolator: Seriously Cool...</div>
+        </div>
+    </div>
+     
+    <hr>
+        <p>The Cryolator is a unique weapon in Fallout 4.</p>
+    <hr>
+        <h2>Characteristics</h2>
+            <p>The weapon creates a cryogenic spray when fired that fades away at mid-range. Firing continuously at an enemy may freeze it solid and render it unable to move or attack for a period of time. More durable enemies will require longer exposure, and some cannot be frozen at all. The Cryolator can chew up large amounts of (rather expensive) ammunition, so use it wisely.</p>
+    <hr>
+        <h2>Location</h2>
+            <p>Inside <a href="#lo_v111">Vault 111</a>, in a display case in the overseer's room behind a Master level lock. It cannot be picked up at the beginning of the game due to the inability to pick Master level locks before exiting the vault. Interaction with the case prompts a line from the Sole Survivor, saying that they will return for it later. An entry on the overseer's terminal in the same room can be found detailing the weapon and why it was built.</p>
+    </div> 
+    
+    <div data-role="footer">
+        <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li><a href="#" data-icon="arrow-l" data-rel="back" data-transition="slide" data-direction="reverse">Go Back</a></li>
+                <li><a href="#" class="scrollToTop" data-icon="arrow-u">Back To Top</a></li>
+                <li><a href="settings.html" data_url="settings.html" data-icon="gear" data-transition="slide">Settings</a></li>
+            </ul>
+                 <h5 class="ui-content">This is a Prototype Application, it was created for Learning Purposes and will not be used outside of this purpose. All information regarding Fallout 4 cotent was gathered from Fallout_Wiki.com (2017) </h5>
+            </div> 
+        </div>        
+</div>
+
+<div data-role="page" id="itm_mag_grog3">
+    <div data-role="header" data-position="fixed"><a href="#leftpanel" class="ui-btn ui-btn-left ui-btn-icon-notext ui-icon-grid ui-corner-all"></a>
+            <h1>Fallout Cartographer</h1>
+            <h2>A Fallout 4 Reference Guide</h2>
+    <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li><a href="index.html" data-url="index.html" data-icon="home" data-transition="slide">Home</a></li>
+                <li><a href="map.html" data-url="map.html" data-icon="navigation" data-transition="slide">Map</a></li>
+                <li><a href="#catMain" data-url="index.html" class="ui-btn-active ui-state-persist" data-icon="info" data-transition="slide">Categories</a></li>
+            </ul>    
+     </div>    
+    </div>
+    
+ <div data-role="main" class="ui-content">
+    <h1>Grognak the Barbarian #3</h1>
+     
+     <div class="responsive">
+        <div class="gallery">
+        <a target="_blank" href="img/img_grog3.png">
+            <img src="img/img_grog3.png" alt="Grognak Issue 3" width="device" height="device">
+        </a>
+            <div class="desc">Grognak the Barbarian: Jungle of the Bat Babies</div>
+        </div>
+    </div>
+     
+    <hr>
+        <p>Grognak the Barbarian, #03 Jungle of the Bat-Babies, is a perk magazine in Fallout 4. </p>
+    <hr>
+        <h2>Characteristics</h2>
+            <p>The magazines consist of a 10-issue run that each give an additional rank of the Barbarian perk, which raises the critical damage of unarmed or melee attacks by 5%. This stacks together to gain up to a 50% increase in melee or unarmed critical damage, if all comics have been found.</p>
+    <hr>
+        <h2>Location</h2>
+            <p>Found in <a href="#lo_sanHill">Sanctuary Hills.</a> On the kitchen table of the House of Tomorrow, where Codsworth resides. For most players, this is the first magazine they will find.</p>
+    </div> 
+    
+    <div data-role="footer">
+        <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li><a href="#" data-icon="arrow-l" data-rel="back" data-transition="slide" data-direction="reverse">Go Back</a></li>
+                <li><a href="#" class="scrollToTop" data-icon="arrow-u">Back To Top</a></li>
+                <li><a href="settings.html" data_url="settings.html" data-icon="gear" data-transition="slide">Settings</a></li>
+            </ul>
+                 <h5 class="ui-content">This is a Prototype Application, it was created for Learning Purposes and will not be used outside of this purpose. All information regarding Fallout 4 cotent was gathered from Fallout_Wiki.com (2017) </h5>
+            </div> 
+        </div>        
+</div>
+    
+<div data-role="page" id="itm_key_pipboy">
+    <div data-role="header" data-position="fixed"><a href="#leftpanel" class="ui-btn ui-btn-left ui-btn-icon-notext ui-icon-grid ui-corner-all"></a>
+            <h1>Fallout Cartographer</h1>
+            <h2>A Fallout 4 Reference Guide</h2>
+    <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li><a href="index.html" data-url="index.html" data-icon="home" data-transition="slide">Home</a></li>
+                <li><a href="map.html" data-url="map.html" data-icon="navigation" data-transition="slide">Map</a></li>
+                <li><a href="#catMain" data-url="index.html" class="ui-btn-active ui-state-persist" data-icon="info" data-transition="slide">Categories</a></li>
+            </ul>    
+     </div>    
+    </div>
+    
+ <div data-role="main" class="ui-content">
+    <h1>Pip-Boy 3000 Mark IV</h1>
+     
+     <div class="responsive">
+        <div class="gallery">
+        <a target="_blank" href="img/img_pipboy3.png">
+            <img src="img/img_pipboy3.png" alt="Pip-Boy 3000" width="device" height="device">
+        </a>
+            <div class="desc">Pip-Boy 3000 Mk IV: You'll Never Want to Take it Off. Because You Can't!</div>
+        </div>
+    </div>
+     
+    <hr>
+        <p>The Pip-Boy 3000 Mark IV is a pre-War Personal Information Processor (PIP) in Fallout 4 manufactured by RobCo Industries and acts as a database for the wearer's personal information and inventory. It is an updated version of the Pip-Boy 3000. The Pip-Boy 3000 is found within <a href="#lo_v111">Vault 111</a> it cannot be missed. </p>
+    <hr>
+        <h2>Functions</h2>
+            <p>The Pip-Boy 3000 Mark IV is a multi-functional device that features a built in Geiger counter and has been programmed to display the wearer's stats, area maps, inventory, and item properties. Its screen also acts as a flashlight in low visibility areas and it has a dial for tuning into radio frequencies. It is a more ergonomically designed and up-to-date version of the Pip-Boy 3000 used in other vaults and according to its start-up screen, the system consists of:<br> Pip-OS v7.1.0.8 <br>64k RAM <br>38,911 bytes free storage</p>
+        <h3>Statistics Menu</h3>
+            <p>The statistics menu, or 'Stats', shows the user's damage and resistance, health, AP, experience and limb condition. The levels of their SPECIAL attributes are shown in a separate tab, with a third tab displaying various perks they have acquired.</p>
+        <h3>Inventory Menu</h3>
+            <p>The inventory menu is a system used for viewing and managing collected items. The menu also displays total caps and carry weight at the bottom of the screen.</p>
+        <h3>Data Menu</h3>
+            <p>The inventory menu is a system used for viewing and managing collected items. The menu also displays total caps and carry weight at the bottom of the screen.</p>
+            <h4>Quests</h4><p>All current and completed quests and miscellaneous objectives can be seen here.</p>
+            <h4>Workshops</h4><p>This tab keeps track of statistics for any settlement currently under control, such as current population, food and water production, defense, the number of beds and total settlement happiness.</p>
+            <h4>Stats</h4><p>This function lists a variety of trivial in-game statistics that can be viewed.</p>
+        <h3>Map Menu</h3>
+            <p>The map menu opens centered on the device's current location. It can switch between world and local maps and can be used to view current supply lines between settlements. The user can view all discovered and marked locations, set waypoints and find the location of a current quest objective.</p>
+        <h3>Radio Menu</h3>
+            <p>No longer in the data menu, radio stations now have their own tab. Diamond City Radio and the Classical Radio will always be shown by default, with new radio frequencies appearing as they are found. If outside the broadcast range of a frequency, it will be grayed out and will not be selectable.</p>
+        <h3>Pip-Boy Light</h3>
+            <p>The Pip-Boy display can be set to an over-bright mode to provide illumination in dark areas. The color of this light matches the user's selected display color preference, which is changed in the actual game display options.<br> To activate the Pip-Boy light, hold down the button used to access the Pip-Boy.</p>
+     
+    </div> 
+    
+    <div data-role="footer">
+        <div data-role="navbar" data-iconpos="top">
+            <ul>
+
+                <li><a href="#" data-icon="arrow-l" data-rel="back" data-transition="slide" data-direction="reverse">Go Back</a></li>
+                <li><a href="#" class="scrollToTop" data-icon="arrow-u">Back To Top</a></li>
+                <li><a href="settings.html" data_url="settings.html" data-icon="gear" data-transition="slide">Settings</a></li>
+            </ul>
+                 <h5 class="ui-content">This is a Prototype Application, it was created for Learning Purposes and will not be used outside of this purpose. All information regarding Fallout 4 cotent was gathered from Fallout_Wiki.com (2017) </h5>
+            </div> 
+        </div>        
+</div>
+
+<div data-role="page" id="itm_holo_redmen">
+    <div data-role="header" data-position="fixed"><a href="#leftpanel" class="ui-btn ui-btn-left ui-btn-icon-notext ui-icon-grid ui-corner-all"></a>
+            <h1>Fallout Cartographer</h1>
+            <h2>A Fallout 4 Reference Guide</h2>
+    <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li><a href="index.html" data-url="index.html" data-icon="home" data-transition="slide">Home</a></li>
+                <li><a href="map.html" data-url="map.html" data-icon="navigation" data-transition="slide">Map</a></li>
+                <li><a href="#catMain" data-url="index.html" class="ui-btn-active ui-state-persist" data-icon="info" data-transition="slide">Categories</a></li>
+            </ul>    
+     </div>    
+    </div>
+    
+ <div data-role="main" class="ui-content">
+    <h1>Red Menace - Minigame Holotape</h1>
+     
+     <div class="responsive">
+        <div class="gallery">
+        <a target="_blank" href="img/img_redmen.png">
+            <img src="img/img_redmen.png" alt="Red Menace" width="device" height="device">
+        </a>
+            <div class="desc">Red Menace: It's Not Donkey Kong, We Swear!</div>
+        </div>
+    </div>
+     
+    <hr>
+        <p>Red Menace is a Pip-Boy game tape in Fallout 4, which serves as propaganda against Chinese communists forces. It was published by Vault-Tec Game Studios in 2053.</p>
+    <hr>
+        <h2>Characteristics</h2>
+            <p>Selectable as a playable game on the <a href="#itm_key_pipboy">Pip-Boy 3000 Mark IV</a>, on the Inventory, Misc tab. The player must rescue Vault Girl from an anthropomorphic Chinese Flag by dodging bombs and jumping barrels while climbing the stairs, similar to Donkey-Kong and Donkey-Kong JR. </p>
+    <hr>
+        <h2>Location</h2>
+            <p>The game can be found on the <a href="#lo_v111">Vault 111</a> recreational terminal.</p>
+    </div> 
+    
+    <div data-role="footer">
+        <div data-role="navbar" data-iconpos="top">
+            <ul>
+
+                <li><a href="#" data-icon="arrow-l" data-rel="back" data-transition="slide" data-direction="reverse">Go Back</a></li>
+                <li><a href="#" class="scrollToTop" data-icon="arrow-u">Back To Top</a></li>
+                <li><a href="settings.html" data_url="settings.html" data-icon="gear" data-transition="slide">Settings</a></li>
+            </ul>
+                 <h5 class="ui-content">This is a Prototype Application, it was created for Learning Purposes and will not be used outside of this purpose. All information regarding Fallout 4 cotent was gathered from Fallout_Wiki.com (2017) </h5>
+            </div> 
+        </div>        
+</div>
+
+<div data-role="page" id="lo_sanHill">
+    <div data-role="header" data-position="fixed"><a href="#leftpanel" class="ui-btn ui-btn-left ui-btn-icon-notext ui-icon-grid ui-corner-all"></a>
+            <h1>Fallout Cartographer</h1>
+            <h2>A Fallout 4 Reference Guide</h2>
+    <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li><a href="index.html" data-url="index.html" data-icon="home" data-transition="slide">Home</a></li>
+                <li><a href="map.html" data-url="map.html" data-icon="navigation" data-transition="slide">Map</a></li>
+                <li><a href="#catMain" data-url="index.html" class="ui-btn-active ui-state-persist" data-icon="info" data-transition="slide">Categories</a></li>
+            </ul>    
+     </div>    
+    </div>
+ <div data-role="main" class="ui-content">
+        <h1>Sanctuary Hills</h1>
+     
+        <div class="responsive">
+        <div class="gallery">
+        <a target="_blank" href="img/img_sanc.png">
+            <img src="img/img_sanc.png" alt="Sanctuary" width="device" height="device">
+        </a>
+            <div class="desc">Sanctuary Hills: A Home Away from Home.</div>
+        </div>
+    </div>
+    <hr>
+        <p>Sanctuary Hills, often referred to as Sanctuary, is a location and settlement in the Commonwealth in 2287.</p>
+    <hr>
+        <h2>Quests</h2>
+            <h3><a href="#quest_WNC">War Never Changes</a></h3>
+            <h3><a href="#quest_OOT">Out of Time</a></h3>
+    <hr>
+        <h2>Notable Loot</h2>
+        <h3><a href="#itm_mag_grog3">Grognak the Barbarian Issue #3</a></h3>
+            <h3>You're SPECIAL!</h3>
+            <h3>Three Gold Bars</h3>
+    <hr>
+        <h2>Creatures</h2>
+            <h3><a href="#cre_radro">Radroach</a></h3>
+            <h3><a href="#cre_blo">Bloatfly</a></h3>
+    <hr>
+        <h2>Layout</h2>
+            <p>Sanctuary Hills is accessible by a small footbridge from <a href="#lo_v111">Vault 111</a> and original main road over the larger bridge crossing the Misty Lake river, leading to Concord, via the Red Rocket fueling station. The village itself is built along a single road, which ends in a cul-de-sac. The site is populated by several houses which, by 2287, are in various states of decay. To the west of Sanctuary Hills the Misty Lake is located and is the source to the two rivers surrounding the small island of Sanctuary Hills.<br> There are multiple safes and lootable items to be found in Sanctuary. Starting from the bridge leading out of the community, there is a floor safe (Advanced) hidden under a dresser in the blue house to the north of the road. In the yellow house at the curve of the street, there is a terminal (Novice) and a safe (Novice) with a makeshift bomb on the top and tension trigger affixed to the left hand side. In the blue house next to the yellow one is a Nuka-Cherry in the fridge, a first aid box in the bathroom and a locked suitcase (Novice) in the bedroom. In the Sole Survivor's house, the player character can find an issue of <a href="#itm_mag_grog3"> Grognak the Barbarian </a> on the kitchen table and the "You're SPECIAL!" book under the dresser in Shaun's room</p>   
+</div>   
+    <div data-role="footer">
+        <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li><a href="#" data-icon="arrow-l" data-rel="back" data-transition="slide" data-direction="reverse">Go Back</a></li>
+                <li><a href="#" class="scrollToTop" data-icon="arrow-u">Back To Top</a></li>
+                <li><a href="settings.html" data_url="settings.html" data-icon="gear" data-transition="slide">Settings</a></li>
+            </ul>
+                 <h5 class="ui-content">This is a Prototype Application, it was created for Learning Purposes and will not be used outside of this purpose. All information regarding Fallout 4 cotent was gathered from Fallout_Wiki.com (2017) </h5>
+            </div> 
+        </div>        
+</div>
+
+<div data-role="page" id="lo_v111">
+    <div data-role="header" data-position="fixed"><a href="#leftpanel" class="ui-btn ui-btn-left ui-btn-icon-notext ui-icon-grid ui-corner-all"></a>
+            <h1>Fallout Cartographer</h1>
+            <h2>A Fallout 4 Reference Guide</h2>
+    <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li><a href="index.html" data-url="index.html" data-icon="home" data-transition="slide">Home</a></li>
+                <li><a href="map.html" data-url="map.html" data-icon="navigation" data-transition="slide">Map</a></li>
+                <li><a href="#catMain" data-url="index.html" class="ui-btn-active ui-state-persist" data-icon="info" data-transition="slide">Categories</a></li>
+            </ul>    
+     </div>    
+    </div>
+ <div data-role="main" class="ui-content">
+        <h1>Vault 111</h1>
+     
+    <div class="responsive">
+            <div class="gallery">
+        <a target="_blank" href="img/img_vault111.png">
+            <img src="img/img_vault111.png" alt="vault 111" width="device" height="device">
+        </a>
+            <div class="desc">Vault 111: Welcome Home!</div>
+        </div>
+    </div>
+    <hr>
+        <p>Vault 111 is a vault-series fallout shelter developed by Vault-Tech. It is located overlooking <a href="#lo_sanHill">Sanctuary Hills</a>, Massachusetts.</p>
+    <hr>
+        <h2>Quests</h2>
+            <h3><a href="#quest_WNC">War Never Changes</a></h3>
+            <h3><a href="#quest_OOT">Out of Time</a></h3>
+    <hr>
+        <h2>Notable Loot</h2>
+            <h3><a href="#itm_wep_cryolator">Cryolator</a></h3>
+            <h3><a href="#itm_key_pipboy">Pip-Boy 3000 Mark IV</a></h3>
+            <h3><a href="#itm_holo_redmen">Red Menace - Minigame Holotape</a></h3>
+    <hr>
+        <h2>Creatures</h2>
+            <h3><a href="#cre_radro">Radroach</a></h3>
+    <hr>
+        <h2>Layout</h2>
+            <p>Unlike other vaults, the entrance to Vault 111 not only has an atypical pneumatic hull, but also acts as a hatch which gives way to an interior elevator. The inner door opens first, followed by the hatch opening. While painted in the prelude, the vault door is rusted and dull after the Great War. There was also a security checkpoint, a trait most other vaults lacked.
+            <br>After the release of the Sole Survivor, the vault shows obvious signs of neglect. Frozen mummified corpses are in the pods, skeletal remains of some of the killed occupants are scattered around the interior with signs of violence, and much of the machinery is no longer in proper working order. <a href="#cre_radro">Radroaches</a> have also invaded the vault and serve as the Sole Survivor's first encountered enemies.</p>   
+</div>   
+    <div data-role="footer">
+        <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li><a href="#" data-icon="arrow-l" data-rel="back" data-transition="slide" data-direction="reverse">Go Back</a></li>
+                <li><a href="#" class="scrollToTop" data-icon="arrow-u">Back To Top</a></li>
+                <li><a href="settings.html" data_url="settings.html" data-icon="gear" data-transition="slide">Settings</a></li>
+            </ul>
+                 <h5 class="ui-content">This is a Prototype Application, it was created for Learning Purposes and will not be used outside of this purpose. All information regarding Fallout 4 cotent was gathered from Fallout_Wiki.com (2017) </h5>
+            </div> 
+        </div>        
+</div>
+    
+<div data-role="page" id="quest_OOT">
+    <div data-role="header" data-position="fixed"><a href="#leftpanel" class="ui-btn ui-btn-left ui-btn-icon-notext ui-icon-grid ui-corner-all"></a>
+            <h1>Fallout Cartographer</h1>
+            <h2>A Fallout 4 Reference Guide</h2>
+    <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li><a href="index.html" data-url="index.html" data-icon="home" data-transition="slide">Home</a></li>
+                <li><a href="map.html" data-url="map.html" data-icon="navigation" data-transition="slide">Map</a></li>
+                <li><a href="#catMain" data-url="index.html" class="ui-btn-active ui-state-persist" data-icon="info" data-transition="slide">Categories</a></li>
+            </ul>    
+     </div>    
+    </div>
+    
+ <div data-role="main" class="ui-content">
+    <h1>Out of Time</h1>
+     
+     <div class="responsive">
+        <div class="gallery">
+        <a target="_blank" href="img/img_oot.png">
+            <img src="img/img_oot.png" alt="Out of Time" width="device" height="device">
+        </a>
+            <div class="desc">Out of Time: Wake Up and Smell the Fallout.</div>
+        </div>
+     </div>
+    <hr>
+        <p>Out of Time is a main story quest in Fallout 4.</p>
+    <hr>
+        <h2>Quest Stages</h2>
+         <table data-role="table" data-mode="columntoggle" class="ui-responsive" id="tableOOT">
+      <thead>
+        <tr>
+          <th data-priority="1">Stage</th>
+          <th data-priority="1">Status</th>
+          <th data-priority="1">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td></td>
+          <td>Exit <a href="#lo_v111">Vault 111</a> </td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td></td>
+          <td>Go Home</td>
+        </tr>
+        <tr>
+          <td>20</td>
+          <td></td>
+          <td>Talk to <a href="#char_cod">Codsworth</a> </td>
+        </tr>
+        <tr>
+          <td>30</td>
+          <td></td>
+          <td>Search the Neighborhood</td>
+        </tr>  
+        <tr>
+          <td>32</td>
+          <td></td>
+          <td>Kill the Insects</td>
+        </tr>  
+        <tr>
+          <td>34</td>
+          <td></td>
+          <td>Kill the Insects</td>
+        </tr>  
+        <tr>
+          <td>55</td>
+          <td></td>
+          <td>Investigate Concord</td>
+        </tr>  
+         <tr>
+          <td>65</td>
+          <td>Complete!</td>
+          <td>Quest Complete</td>
+        </tr>
+      </tbody>
+    </table>
+                
+    <hr>
+        <h2>Notes</h2>
+        <ul>
+            <li>It is possible to clear out the area before talking to Codsworth, doing so will make him point the player character to Concord as soon as he is spoken to.</li>
+            <li>If visiting Concord before speaking to Codsworth, the dialogue will change and he will be immediately available as a companion.</li>
+        </ul>
+    </div> 
+    
+    <div data-role="footer">
+        <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li><a href="#" data-icon="arrow-l" data-rel="back" data-transition="slide" data-direction="reverse">Go Back</a></li>
+                <li><a href="#" class="scrollToTop" data-icon="arrow-u">Back To Top</a></li>
+                <li><a href="settings.html" data_url="settings.html" data-icon="gear" data-transition="slide">Settings</a></li>
+            </ul>
+                 <h5 class="ui-content">This is a Prototype Application, it was created for Learning Purposes and will not be used outside of this purpose. All information regarding Fallout 4 cotent was gathered from Fallout_Wiki.com (2017) </h5>
+            </div> 
+        </div>        
+</div>
+        
+<div data-role="page" id="quest_WNC">
+    <div data-role="header" data-position="fixed"><a href="#leftpanel" class="ui-btn ui-btn-left ui-btn-icon-notext ui-icon-grid ui-corner-all"></a>
+            <h1>Fallout Cartographer</h1>
+            <h2>A Fallout 4 Reference Guide</h2>
+    <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li><a href="index.html" data-url="index.html" data-icon="home" data-transition="slide">Home</a></li>
+                <li><a href="map.html" data-url="map.html" data-icon="navigation" data-transition="slide">Map</a></li>
+                <li><a href="#catMain" data-url="index.html" class="ui-btn-active ui-state-persist" data-icon="info" data-transition="slide">Categories</a></li>
+            </ul>    
+     </div>    
+    </div>
+    
+ <div data-role="main" class="ui-content">
+    <h1>War Never Changes</h1>
+     
+    <div class="responsive">
+        <div class="gallery">
+        <a target="_blank" href="img/img_wnc.png">
+            <img src="img/img_wnc.png" alt="War Never Changes" width="device" height="device">
+        </a>
+            <div class="desc">War Never Changes: Starts with a Bang.</div>
+        </div>
+     </div>
+    <hr>
+        <p>War Never Changes is the prologue, a main story quest and an achievement/trophy in Fallout 4. The quest takes place on October 23, 2077, in the Sole Survivor's pre-War home in suburban Sanctuary Hills, and begins immediately after the game is started.</p>
+    <hr>
+        <h2>Quest Stages</h2>
+         <table data-role="table" data-mode="columntoggle" class="ui-responsive" id="tableOOT">
+      <thead>
+        <tr>
+          <th data-priority="1">Stage</th>
+          <th data-priority="1">Status</th>
+          <th data-priority="1">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>10</td>
+          <td></td>
+          <td>Create Character</td>
+        </tr>
+        <tr>
+          <td>20</td>
+          <td></td>
+          <td>Player Allowed to Walk Around Home</td>
+        </tr>
+        <tr>
+          <td>30</td>
+          <td></td>
+          <td>Walk into Den to Trigger <a href="#char_cod">Codsworth</a> </td>
+        </tr>
+        <tr>
+          <td>100</td>
+          <td></td>
+          <td>Talk to Vault-Tec Rep</td>
+        </tr>  
+        <tr>
+          <td>220</td>
+          <td></td>
+          <td>Go to Shaun</td>
+        </tr>  
+        <tr>
+          <td>240</td>
+          <td></td>
+          <td>Activate Mobile</td>
+        </tr>  
+        <tr>
+          <td>260</td>
+          <td></td>
+          <td>Investigate TV</td>
+        </tr>  
+         <tr>
+          <td>400</td>
+          <td></td>
+          <td>Get To Vault</td>
+        </tr>
+          <tr>
+          <td>620</td>
+          <td></td>
+          <td>Take a Suit</td>
+        </tr>
+          <tr>
+          <td>710</td>
+          <td></td>
+          <td>Get in Pod</td>
+        </tr>
+          <tr>
+          <td>1000</td>
+          <td>Complete!</td>
+          <td>Quest Complete</td>
+        </tr>
+        <tr>
+          <td>5000</td>
+          <td>Failed!</td>
+          <td>Player Leaves Area - World Ends</td>
+        </tr>
+      </tbody>
+    </table>
+        
+    <hr>
+        <h2>Notes</h2>
+        <ul>
+            <li>The player character can take as long as they like to reach <a href="#lo_v111">Vault 111</a>, but if they stray too far from the game's intended path, the nuclear bomb will detonate in the distance, resulting in instant death.</li>
+            <li>The name of the quest is a reference to the famous Fallout line: "War, war never changes".</li>
+            <li>When awakening for the first time, the player can make their character fruitlessly punch the cryogenic pod's glass by pressing the interact button. This can be done for the entire duration of the event.</li>
+        </ul>
+    </div> 
+    
+    <div data-role="footer">
+        <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li><a href="#" data-icon="arrow-l" data-rel="back" data-transition="slide" data-direction="reverse">Go Back</a></li>
+                <li><a href="#" class="scrollToTop" data-icon="arrow-u">Back To Top</a></li>
+                <li><a href="settings.html" data_url="settings.html" data-icon="gear" data-transition="slide">Settings</a></li>
+            </ul>
+                 <h5 class="ui-content">This is a Prototype Application, it was created for Learning Purposes and will not be used outside of this purpose. All information regarding Fallout 4 cotent was gathered from Fallout_Wiki.com (2017) </h5>
+            </div> 
+        </div>        
+</div>
+    
+</body>
+</html>

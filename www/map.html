@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8">
+        <meta name="format-detection" content="telephone=no" /> <!-- Removes Click-to-Call iOS Function -->
+        <meta name="msapplication-tap-highlight" content="no" /> <!-- Removes Grey Tap Highlight on Windows Phone 8 and Up. -->
+        
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0"> <!-- Ensures proper scaling with all devices -->
+        
+         <link rel="stylesheet" href="css/jquery.mobile-1.4.5.css"/> <!-- JQuery Mobile CSS --> 
+        <link rel="stylesheet" href="css/themes/fallout_carto.css"/><!-- Link to JQuery Theme CSS -->
+        <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css"/>
+        <link rel="stylesheet" href="css/style.css"/>
+    
+        <script type="text/javascript" src="js/jquery.mobile-1.4.5.js"></script> <!-- JQueryMobile Library -->        
+        <script type="text/javascript" src="cordova.js"></script> <!-- Allows access to native device hardware -->
+        <script type="text/javascript" src="js/index.js"></script><!--Own JS File-->
+        
+        <title>Fallout Cartographer</title>       
+</head>
+<body>  
+    <div data-role="page" id="mapMain">
+    <div data-role="header" data-position="fixed"><a href="#leftpanel" class="ui-btn ui-btn-left ui-btn-icon-notext ui-icon-grid ui-corner-all"></a>
+            <h1>Fallout Cartographer</h1>
+            <h2>A Fallout 4 Reference Guide</h2>
+        <div data-role="navbar" data-iconpos="top">
+            <ul>
+                <li><a href="index.html" data-url="index.html" data-icon="home" data-transition="slide">Home</a></li>
+                <li><a href="map.html" data-url="map.html" class="ui-btn-active ui-state-persist"  data-icon="navigation" data-transition="slide">Map</a></li>
+                <li><a href="#catMain" data-url="index.html" data-icon="info" data-transition="slide">Categories</a></li>
+            </ul>    
+        </div>
+    </div>
+      
+    <div data-role="main" class="ui-content">
+        <h1>Map</h1>
+        <h2 id="map_h2">Tap a Location</h2>
+        <hr>
+        <img src="img/img_map.png" width="332px" height="350px" class="ui-content">
+    </div>
+    
+    <div data-role="footer">
+        <div data-role="navbar" data-iconpos="top">
+                <ul>
+                    <li><a href="#" data-icon="arrow-l" data-rel="back" data-transition="slide" data-direction="reverse">Go Back</a></li>
+                    <li><a href="#" class="scrollToTop" data-icon="arrow-u">Back To Top</a></li>
+                    <li><a href="settings.html" data_url="settings.html" data-icon="gear" data-transition="slide">Settings</a></li>
+                </ul>
+            <h5 class="ui-content">This is a Prototype Application, it was created for Learning Purposes and will not be used outside of this purpose. All information regarding Fallout 4 cotent was gathered from Fallout_Wiki.com (2017) </h5>
+        </div>
+    </div>
+</div>
+    
+</body>
+</html>
